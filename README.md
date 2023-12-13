@@ -27,8 +27,8 @@ You can customize the instance generation by modifying the input parameters in t
 
 ## Output
 
-The script generates a JSON file in the current directory. This file represents a nurse scheduling instance based on the input parameters.
-Filename `random_instance_<n_week>_<room_config>_<room_balancing>_<fix_nurses>_<nurse_skill_level>_<equipment>_<id>.json`
+The script generates a JSON file in a "instance" directory. This file represents a nurse scheduling instance based on the input parameters.
+Filename `intance_random_instance_<n_week>_<room_config>_<room_balancing>_<fix_nurses>_<nurse_skill_level>_<equipment>_<id>.json`
 
 ## License
 
