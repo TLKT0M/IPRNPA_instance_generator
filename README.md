@@ -1,4 +1,4 @@
-# PRA_instance_generator
+# IPRNPA_instance_generator
 
 ## Overview
 This project includes a instance generator that was developed to generate instances of patient-to-room and nurse-to-patient assignment described in our [preprint](https://arxiv.org/abs/2309.10739). It creates JSON files containing information about nurses, patients, rooms, and shifts based on input parameters. The generated instances can be used for scheduling and optimization purposes.
