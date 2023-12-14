@@ -225,13 +225,19 @@ def generate_patient_equipment_requirement(ad_shift, di_shift, equipment):
     # Monotonously decreasing requirements
     if not equipment:
         eq_req = {ad_shift: []}
+
     else:
         eq_req = {ad_shift: list(sample(
                             list(equipment),
                             randint(1, len(equipment))
                             ))}
-    for s in range(ad_shift + 1, di_shift + 1):
-        eq_req[s] = list(sample(eq_req[s - 1], randint(0, len(eq_req[s - 1]))))
+    eq_req[ad_shift+1] = eq_req[ad_shift]
+    eq_req[ad_shift+2] = eq_req[ad_shift]
+    for s in range(ad_shift + 3, di_shift + 1,3):
+        
+        eq_req[s] = list(sample(eq_req[s - 3], randint(0, len(eq_req[s - 3]))))
+        eq_req[s+1] = eq_req[s]
+        eq_req[s+2] = eq_req[s]
     return eq_req
 
 
@@ -507,7 +513,7 @@ def generate_instance_set(
                                     )
                                     print(instance, "successfully")
                                     
-"""
+
 if __name__ == "__main__":
     seed(1208)
     gen = generate_instance_set(
@@ -523,4 +529,3 @@ if __name__ == "__main__":
         fix_nurses=21,
         mode="auto",
     )
-"""
